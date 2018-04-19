@@ -18,6 +18,14 @@ sub EVENT_ITEM {
     quest::say("Ay danks. Take dis to Uglan.");
     quest::summonitem(16547);
   }
+  elsif(plugin::check_handin(\%itemcount, 13358 => 1, 13227 => 1)) {
+    quest::say("That show dark elves who strongest. Me hope you kill many blue orcs. You Craknek Hero now. You take this. It mine. Hero reward. You great ogre now. Smash best.");
+    quest::faction(57,10);
+    quest::faction(46,10);
+    quest::faction(128,-10);
+    quest::exp(100);
+    quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128);
+  }
   elsif(plugin::check_handin(\%itemcount, 1717 => 1)) {
     quest::say("Arg! Dem damned Orcs and Dark Elves! To da hells with dem! I be wantin revenge! Bring me da hearts of da dark elf ammbassador's K'ryn who can be locat'd in da shamen tun'ls, and D'vinn who can be located in da crushbone with da orc emperor.");
   }
@@ -40,14 +48,6 @@ sub EVENT_ITEM {
     quest::faction(128,-10);
     quest::exp(100);
     quest::summonitem(5030);
-  }
-  elsif(plugin::check_handin(\%itemcount, 13358 => 1, 13227 => 1)) {
-    quest::say("That show dark elves who strongest. Me hope you kill many blue orcs. You Craknek Hero now. You take this. It mine. Hero reward. You great ogre now. Smash best.");
-    quest::faction(57,10);
-    quest::faction(46,10);
-    quest::faction(128,-10);
-    quest::exp(100);
-    quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128);
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
