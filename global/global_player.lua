@@ -1,3 +1,4 @@
+--[[ 
 function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	if(e.self:GetLevel() >= 15 and qglobals['Wayfarer'] == nil) then
@@ -17,7 +18,8 @@ function event_enter_zone(e)
 				.. "and find out more. Adventure awaits you, my friend.\'");
 		end
 	end
-end
+end 
+]]
 
 function event_combine_success(e)
 	if (e.recipe_id == 10904 or e.recipe_id == 10905 or e.recipe_id == 10906 or e.recipe_id == 10907) then
@@ -173,7 +175,7 @@ end
 --   the first set is the age required in seconds
 --   the second is if to ignore the age and grant anyways live test server style
 --   the third is enabled
---]]
+
 vet_aa = {
     [481]  = { 31536000, true, true}, -- Lesson of the Devote 1 yr
     [482]  = { 63072000, true, true}, -- Infusion of the Faithful 2 yr
@@ -190,6 +192,7 @@ vet_aa = {
     [182]  = {409968000, true, true}, -- Summon Personal Tribute Master 13 yr
     [600]  = {441504000, true, true}, -- Blessing of the Devoted 14 yr
 }
+--]]
 
 function event_connect(e)
     local age = e.self:GetAccountAge();
