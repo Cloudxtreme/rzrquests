@@ -2,6 +2,10 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings " .. e.other:GetName() .. "! I am Reuben Reldnok. first Paladin of the Deep Muses. When I was just a young lad I journeyed to Kaladim. the home of our cousins the Dwarves. At the Temple of the Duke of Below I studied the ways of a Paladin of our creator Brell Serilis. I have returned to Ak'Anon to train interested young gnomes the ways I have mastered so that we may defend Ak'Anon and Brells disciples everywhere from the threats that would see us destroyed. If you are a Paladin of the Deep Muses I have some [armor quests] for you to complete.");
 	elseif(e.message:findi("armor quests")) then
+		e.self:Say("No newbie gear for you!");
+	end
+	--[[
+	elseif(e.message:findi("armor quests")) then		
 		e.self:Say("I have armor quests that I present to young gnomish paladins when they are ready to venture out into the Mountains of Steamfont and begin their training. Are you a gnome that is [ready for training]?");
 	elseif(e.message:findi("ready for training")) then
 		e.self:Say("Fantastic! Let me first begin by telling you how you will create your armor young " .. e.other:GetName() .. ". I will present you with a Tinkerers Mail Assembly Kit that you will use to collect all different kinds of items from Ak'anon and from the Steamfont Mountaints. You will use specific [armor recipes] in this kit to create materials that you will use along with the molds I provide you with in a forge to create your armor!");
@@ -44,6 +48,7 @@ function event_say(e)
 	elseif(e.message:findi("up for the challenge")) then
 		e.self:Say("Ok I will need 4 things to construct this blade. Bring me a Finished Sheet of Metal, a Kobold Backbone, Preserved Rat Pelt and 1 Bottle of Clockwork Oil that was stolen from me from some renegade clockworks not too long ago. Once I have these items I can make you a sword worthy of Brells finest heroes.");
 	end
+	]]
 end
 
 function event_trade(e)

@@ -1,4 +1,16 @@
 function event_say(e)
+	if (e.message:findi("recipes")) then
+		e.self:Say("No newbie gear for you!");
+	elseif(e.message:findi("boots")) then
+		e.self:Say("No newbie gear for you!");
+	elseif(e.message:findi("collect")) then
+		e.self:Say("No newbie gear for you!");
+	elseif(e.message:findi("tunic")) then
+		e.self:Say("No newbie gear for you!");
+	end
+end
+--[[
+function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings there " .. e.other:GetName() .. "! I am Morlan Tanlonikan Assassin of Akanon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
 	elseif(e.message:findi("tasks")) then
@@ -51,3 +63,4 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+--]]

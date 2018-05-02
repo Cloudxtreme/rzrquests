@@ -18,8 +18,10 @@ function event_say(e)
 		e.other:SummonItem(10986);
 	elseif(e.message:findi("further instruction")) then
 		e.self:Say("It is one thing to destroy the artificial life of a clockwork. It is another thing entirely to claim the life of another gnome. There is a member of the Dark Reflection. Yulcabis. who has been assigned to a task in the Steamfont Mountains. He has failed repeatedly in the tasks assigned to him in the past and has become a burden to the Dark Reflection. Find Yulcabis and slay him. Return to me with the weapon he carries.");
+	--[[
 	elseif(e.message:findi("armor")) then
 		e.self:Say("Armor? For a warrior? Oh yes. You'll need to speak with Windlebeck for that.");
+	]]
 	elseif(e.message:findi("trades")) then
 		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
 		e.other:SummonItem(51121);
@@ -31,6 +33,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
+	--[[
 	if(item_lib.check_turn_in(e.trade, {item1 = 10990})) then -- Yulcabis's axe
 		e.self:Say("Excellent work. Now that we no longer have to bother with Yulcabis, I suppose we can discuss your progression as a member of the Dark Reflection. You'll need some [armor], though.");
 		e.other:SummonItem(11077);	-- plague warrior battle axe
@@ -41,7 +44,8 @@ function event_trade(e)
 		e.other:Faction(91,-10,0); 	-- eldritch collective
 		e.other:Faction(176,-10,0); 	-- King ak'anon
 		e.other:Faction(209,3,0); 	-- meldrath
-	elseif (item_lib.check_turn_in(e.trade, {item1 = 18759})) then -- Stained Parchment
+	]]
+	if (item_lib.check_turn_in(e.trade, {item1 = 18759})) then -- Stained Parchment
 		e.self:Say("This is fabulous news!! You have done well, young one. Once you are ready for [further instruction] please let me know, I will guide you through your early and most dangerous days. When you have become more experienced in our art, I will be able to further train you, both in our art as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13518); 	-- Tin Patched Tunic*
 		e.other:Ding();

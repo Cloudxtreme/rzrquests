@@ -11,10 +11,9 @@ function event_say(e)
 		e.self:Say("The cargo clockwork is located near the entrance to Ak'Anon in the Steamfont Mountains. It runs a delivery to the windmills every five days at eight in the morning. There have been attacks by a group of highwaymen. They are quite a formidable group. I have offered a reward for their heads. Be very careful if you plan on escorting the cargo clockwork. This trio of bandits is very strong.");
 	end
 end
-
+--[[
 function event_trade(e)
 	local item_lib = require("items");
-
 	if(item_lib.check_turn_in(e.trade, {item1 = 85055, item2 = 85056, item3 = 85057})) then -- Renaldo's Severed Head, Hector's Severed Head, Jerald's Severed Head
 		e.self:Say("I heard our shipment made it back safely. These heads will send a message to any other thief that plans on robbing our cargo shipments. Thank you " .. e.other:GetName() .. ", take this mask and this coin as your reward.");
 		e.other:SummonItem(85058); -- Highway Protectors Mask
@@ -29,3 +28,4 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+]]

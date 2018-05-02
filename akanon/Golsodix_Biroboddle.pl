@@ -20,10 +20,10 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 219847 => 1)) {
-    quest::say("A contraption from Xoomix! I knew he was still alive. This also says that he needs his gearbox to make his compass so he can return home. I must have it here somewhere let me take a look. Ah, here it is. Please take this to Xoomix so he can return home and thank you for all your kind deeds to help a lost gnome. Brell certainly smiles down upon you!");
-    quest::summonitem(21985);
-  }
-  plugin::return_items(\%itemcount);
-}
+#sub EVENT_ITEM {
+  #if (plugin::check_handin(\%itemcount, 219847 => 1)) {
+    #quest::say("A contraption from Xoomix! I knew he was still alive. This also says that he needs his gearbox to make his compass so he can return home. I must have it here somewhere let me take a look. Ah, here it is. Please take this to Xoomix so he can return home and thank you for all your kind deeds to help a lost gnome. Brell certainly smiles down upon you!");
+    #quest::summonitem(21985);
+  #}
+  #plugin::return_items(\%itemcount);
+#}

@@ -16,6 +16,10 @@ function event_say(e)
 	elseif(e.message:findi("cleric")) then
 		e.self:Say("Well you would certainly be eligible for my training then young " .. e.other:GetName() .. ". I have a number of armor recipes that I give to young clerics to make sure that when they leave the comfort of the Steamfont Mountains they are ready for whatever battles they may face. If you are [interested in creating your own armor] then all you must do is simply ask and I will give you instructions to get started.");
 	elseif(e.message:findi("interested in creating")) then
+		e.self:Say("No newbie gear for you!");
+	end
+	--[[
+	elseif(e.message:findi("interested in creating")) then
 		e.self:Say("I am always happy to see an eager young one like yourself! Brell certainly takes pride in all young gnomes that draw power from him to give life so you should consider yourself very special. To create your own armor you are going to collect [various items] from Ak`Anon and Steamfont. You will then combine them in this assembly kit. Once you have made a material you will place it in a forge along with molds that I will present to you to create your armor.");
 		e.other:SummonItem(17253);
 	elseif(e.message:findi("various items")) then
@@ -46,15 +50,18 @@ function event_say(e)
 	elseif(e.message:findi("collect the items")) then
 		e.self:Say("I need 3 Flawless Harpy Claws and 1 Ebon Drake Backbone still to have all the items necessary to craft this new mace. Once I have these items I can make a Shortnobles Walking Staff. For your trouble I will offer you my first staff made should I be able to create one. I hope to see you soon!");
 	end
+	]]
 end
 
 function event_trade(e)
 	local item_lib = require("items");
+--[[
 	if(item_lib.check_turn_in(e.trade, {item1 = 9105,item2 = 9105,item3 = 9105,item4 = 9106})) then
 		e.self:Say("Thank you! Here, take this staff and good luck on your journey."); -- Text made up
 		e.other:SummonItem(9107); 	-- Walking Staff of the Shortnoble
 		e.other:Ding();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 18775})) then
+]]
+	if(item_lib.check_turn_in(e.trade, {item1 = 18775})) then
 		e.self:Say("Welcome to the Abbey of Deep Musing.  Here you can train and raise your abilities to the peak of perfection. Take this tunic and wear it with pride. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various trades you will have available to you. In addition, if you'd like to make your own set of equipment, please talk to Maldeny Gredlong. You can find her by the shops down by the water.");
 		e.other:SummonItem(13517);  -- worn felt tunic
 		e.other:Ding();

@@ -1,5 +1,10 @@
 -- Converted to .lua by Speedz
-
+function event_say(e)
+	if (e.message:findi("plague")) then
+		e.self:Say("No newbie gear for you!");
+	end
+end
+--[[
 function event_say(e)
 	if (e.message:findi("plague knight boot")) then
 		e.self:Say("To assemble Plague Knight Boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Cat Pelts, and two Clockwork Rat Belly Plates in the Mail Assembly Kit.");
@@ -41,3 +46,4 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+--]]

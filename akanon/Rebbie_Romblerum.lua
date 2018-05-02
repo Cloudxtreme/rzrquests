@@ -5,6 +5,8 @@ function event_say(e)
 		e.self:Say("Hail " .. e.other:GetName() .. "!");
 	elseif(e.message:findi("silk thread")) then
 		e.self:Say("Silk Thread is created by combineing two spiderling silk in a sewing kit."); -- text is made up as i could not find the real text reply.
+	end		
+	--[[
 	elseif(e.message:findi("plague rust boot")) then
 		e.self:Say("To assemble Plague Rust Boots you will require two [silk thread], two ruined ebon drakeling scales, and two rebel clockwork foot plates. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Boot Pattern.");
 		e.other:SummonItem(19561);
@@ -34,8 +36,10 @@ function event_say(e)
 		e.other:SummonItem(19555);
 		e.other:Ding();
 	end
+	]]
 end
 
+--[[
 function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 10988})) then
@@ -45,3 +49,4 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+]]

@@ -48,6 +48,7 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+--[[
 function event_timer(e)
 	if e.timer=="check_sit" then
 		if(client_to_check:IsSitting()) then
@@ -57,3 +58,4 @@ function event_timer(e)
 		end
 	end
 end
+]]
