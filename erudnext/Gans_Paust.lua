@@ -13,6 +13,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("glances at you and hurriedly makes a gesture of religious meaning before you and says, 'Yes, yes, I hereby bless you in the name of Prexus. May your catch be plentiful and your nets never snag. Are there any other fishermen seeking a blessing? I'm very busy.'");
+	--[[
 	elseif(e.message:findi("your brother")) then
 		e.self:Say("What? How do you know fo my brother? Ahh I assume Breya told you. He's been gone for quite some time with no word sent on his progress or his wellbeing. I need to find someone to [check on him].");
 	elseif(e.message:findi("check on him")) then
@@ -24,6 +25,7 @@ function event_say(e)
 	elseif(e.message:findi("second book")) then
 		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
 		e.other:SummonItem(51122);
+	]]
 	end
 end
 
@@ -38,11 +40,13 @@ function event_trade(e)
 		e.other:Faction(145,15,0); -- High Council of Erudin
 		e.other:Faction(143,-15,0); -- Heretics
 		e.other:AddEXP(100);
+	--[[
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1771})) then
 		e.self:Say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way.");
 		e.other:SummonItem(1763);
 		e.other:Ding();
 		e.other:AddEXP(300);
+	]]
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

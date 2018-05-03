@@ -20,14 +20,14 @@ function event_say(e)
 	elseif(e.message:findi("guild coin")) then
 		e.self:Say("Yes, of course. Here it is. Remember that it is not a form of currency.");
 		e.other:SummonItem(13989);
-	elseif(e.message:findi("powerful shamen")) then -- need correct text
-		e.self:Say("There are obviously other shaman with greater healing ability than those we have yet seen.  Take this pouch and collect some of their odd necklaces so that we may study them.");
-		e.other:SummonItem(17090);
-	elseif(e.message:findi("greater kobold shamen")) then
-		e.self:Say("Return to the Warrens and obtain eight of the bronze symbols worn by the kobolds greater shaman. Place them in this sack that has been blessed by the powers of Quellious to protect you from the evil influence of the evil symbols. Return the full sack with your initiate symbol of Quellious.");
-		e.other:SummonItem(17090);
-	elseif(e.message:findi("ready to advance")) then
-		e.self:Say("You are ready to strike at the body of the kobold shamans power. There is no reasoning with the Kobolds thus there shall be no peace in our beloved lands until their devotion to their wicked deity ceases. Return once again to the Warrens and bring me the unholy symbol worn by the High Shaman.");
+	-- elseif(e.message:findi("powerful shamen")) then -- need correct text
+	-- 	e.self:Say("There are obviously other shaman with greater healing ability than those we have yet seen.  Take this pouch and collect some of their odd necklaces so that we may study them.");
+	-- 	e.other:SummonItem(17090);
+	-- elseif(e.message:findi("greater kobold shamen")) then
+	-- 	e.self:Say("Return to the Warrens and obtain eight of the bronze symbols worn by the kobolds greater shaman. Place them in this sack that has been blessed by the powers of Quellious to protect you from the evil influence of the evil symbols. Return the full sack with your initiate symbol of Quellious.");
+	-- 	e.other:SummonItem(17090);
+	-- elseif(e.message:findi("ready to advance")) then
+	-- 	e.self:Say("You are ready to strike at the body of the kobold shamans power. There is no reasoning with the Kobolds thus there shall be no peace in our beloved lands until their devotion to their wicked deity ceases. Return once again to the Warrens and bring me the unholy symbol worn by the High Shaman.");
 	end
 end
 
