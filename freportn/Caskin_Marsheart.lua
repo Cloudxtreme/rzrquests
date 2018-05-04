@@ -12,13 +12,14 @@ end
 
 function event_say(e)
 local qglobals = eq.get_qglobals(e.other)
-	if(e.message:findi("trades")) then
-		e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		e.other:SummonItem(51121);
-	elseif(e.message:findi("second book")) then
-		e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
-		e.other:SummonItem(51122);
-	elseif(qglobals["druid_epic"] == "3" and e.message:findi("Soulbinder Grunson sent me")) then
+	-- if(e.message:findi("trades")) then
+	-- 	e.self:Say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+	-- 	e.other:SummonItem(51121);
+	-- elseif(e.message:findi("second book")) then
+	-- 	e.self:Say("Here is the second volume of the book you requested, may it serve you well!");
+	-- 	e.other:SummonItem(51122);
+	-- else
+	if(qglobals["druid_epic"] == "3" and e.message:findi("Soulbinder Grunson sent me")) then
 		e.self:Say("You mean Geadin. Caskin's eyes lose their focus for a moment as he appears to be reminiscing. Geadin was a good friend of mine but I haven't seen him in ten years, not since his [" .. eq.say_link("problems") .. "] with the Soulbinders.");
 	elseif(qglobals["druid_epic"] == "3" and e.message:findi("problems")) then
 		e.self:Say("Caskin was a great man. Yes, I know he went down the wrong path eventually, but he saved a lot of people. He helped form the Soulbinders and, ironically enough, helped to write the rules that they now live by. Unfortunately he wasn't strong enough to live by those rules. His was a drive for success, for achievement, and that was his undoing. His [" .. eq.say_link("research") .. "] became more important to him than anything, even more important than people he was trying to help.");
