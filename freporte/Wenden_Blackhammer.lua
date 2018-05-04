@@ -1,3 +1,4 @@
+-- Warrior epic 1.0 stuff
 function event_say(e)
 	if(e.other:Class() == "Warrior") then
 		if(e.message:findi("hail")) then
