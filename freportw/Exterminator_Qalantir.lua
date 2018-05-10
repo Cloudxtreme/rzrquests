@@ -9,7 +9,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13071,item2 = 13071,item3 = 13071,item4 = 13071,})) then
 		e.self:Say("This is good work! I know this isn't much, but it is all I can offer you. Thanks for your help!");
-		e.other:SummonItem(0);
+		-- e.other:SummonItem(0);
 		e.other:Ding();
 		e.other:Faction(48,1,0);
 		e.other:Faction(105,1,0);

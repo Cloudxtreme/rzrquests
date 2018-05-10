@@ -21,7 +21,7 @@ function event_trade(e)
 		e.other:Faction(235,-1,0); -- Opal Dark Briar
 		e.other:Faction(105,-1,0); -- Freeport Militia
 		e.other:AddEXP(500);
-		e.other:GiveCash(9,9,5,0);
+		e.other:GiveCash(2,9,5,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
