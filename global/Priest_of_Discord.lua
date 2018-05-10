@@ -52,11 +52,11 @@ function event_say(e)
       elseif(e.message:findi("read")) then
          e.self:Say("Very well. Here you go. Simply return it to me to be released from the chains of Order.");
          e.other:SummonItem(18700); --Tome of Order and Discord
-      elseif(e.message:findi("wish")) then
-         --e.self:Say("I am sorry but Discord is closed to me right now.");
-         e.self:Say("Prepare yourself to cross into the depths of Discord!");
-         eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
-         e.other:MovePC(302, -1485.52, -1263.29, 222.0,72);
+      -- elseif(e.message:findi("wish")) then
+      --    --e.self:Say("I am sorry but Discord is closed to me right now.");
+      --    e.self:Say("Prepare yourself to cross into the depths of Discord!");
+      --    eq.set_global("OOW_PoD_Origin",tostring(eq.get_zone_id()),5,"F");
+      --    e.other:MovePC(302, -1485.52, -1263.29, 222.0,72);
       end
 end
 
@@ -64,22 +64,27 @@ function event_trade(e)
    local item_lib = require("items");
    
    if (item_lib.check_turn_in(e.trade, {item1 = 18700})) then --Tome of Order and Discord
-      e.self:Say("I see you wish to join us in Discord! Welcome! By turning your back on the protection of Order you are now open to many more opportunities for glory and power. Remember that you can now be harmed by those who have also heard the call of Discord.");
-      e.other:SetPVP(true);
-      e.other:Ding();
-   elseif((e.other:Class() == "Wizard" or e.other:Class() == "Druid") and item_lib.check_turn_in(e.trade, {item1 = 77765, item2 = 77765, item3 = 77765, item4 = 77766})) then --Discordant Crystal Shards x 3, Rolled Discordant Parchment
-      e.self:Emote("wraps the crystals in the parchment and closes his eyes, chanting in a language you've never heard. In moments, a burning parchment appears.");
-      e.self:Say("You will now be able to teleport into the realm of discord, true power is at your fingertips!");
+      if (e.other:GetPVP(true)) {
+         e.self:Say("I see you already walk the path of Discord. Rejoice, brother.");
+      } else {
+         e.self:Say("I see you wish to join us in Discord! Welcome! By turning your back on the protection of Order you are now open to many more opportunities for glory and power. Remember that you can now be harmed by those who have also heard the call of Discord.");
+         e.other:SetPVP(true);
+         e.other:Ding();   
+      }
+      
+   -- elseif((e.other:Class() == "Wizard" or e.other:Class() == "Druid") and item_lib.check_turn_in(e.trade, {item1 = 77765, item2 = 77765, item3 = 77765, item4 = 77766})) then --Discordant Crystal Shards x 3, Rolled Discordant Parchment
+   --    e.self:Emote("wraps the crystals in the parchment and closes his eyes, chanting in a language you've never heard. In moments, a burning parchment appears.");
+   --    e.self:Say("You will now be able to teleport into the realm of discord, true power is at your fingertips!");
 
-      if(e.other:Class() == "Wizard") then
-         e.other:SummonItem(77659); --Spell: Bloodfields Gate
-         e.other:SummonItem(77660); --Spell: Translocate: Bloodfields
-         e.other:SummonItem(77661); --Spell: Bloodfields Portal
-      elseif(e.other:Class() == "Druid") then
-         e.other:SummonItem(77662); --Spell: Circle of Bloodfields
-         e.other:SummonItem(77663); --Spell: Ring of Bloodfields
-      end
-      e.other:Ding();
+   --    if(e.other:Class() == "Wizard") then
+   --       e.other:SummonItem(77659); --Spell: Bloodfields Gate
+   --       e.other:SummonItem(77660); --Spell: Translocate: Bloodfields
+   --       e.other:SummonItem(77661); --Spell: Bloodfields Portal
+   --    elseif(e.other:Class() == "Druid") then
+   --       e.other:SummonItem(77662); --Spell: Circle of Bloodfields
+   --       e.other:SummonItem(77663); --Spell: Ring of Bloodfields
+   --    end
+   --    e.other:Ding();
    end
    item_lib.return_items(e.self, e.other, e.trade)
 end
