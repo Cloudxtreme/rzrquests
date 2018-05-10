@@ -19,24 +19,24 @@ sub EVENT_SAY {
          quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
       }
    }
-   elsif ($text=~/trades/i) {
-      if ($faction <= 7) {
-         quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-         quest::summonitem(51121);
-      }
-      else {
-         quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
-      }
-   }
-   elsif ($text=~/second book/i) {
-      if ($faction <= 7) {
-         quest::say("Here is the second volume of the book you requested, may it serve you well!");
-         quest::summonitem(51122);
-      }
-      else {
-         quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
-      }
-   }
+   # elsif ($text=~/trades/i) {
+   #    if ($faction <= 7) {
+   #       quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+   #       quest::summonitem(51121);
+   #    }
+   #    else {
+   #       quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
+   #    }
+   # }
+   # elsif ($text=~/second book/i) {
+   #    if ($faction <= 7) {
+   #       quest::say("Here is the second volume of the book you requested, may it serve you well!");
+   #       quest::summonitem(51122);
+   #    }
+   #    else {
+   #       quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
+   #    }
+   # }
    elsif ($text=~/gem of tunare/i) {
       if ($faction <= 7) {
          quest::say("The bright green Gem of Tunare was discovered by the Scouts of Tunare in the trunk of a great tree. The lightning streaked down to split the tree in twain and there, inside, was the gem, Tunare's gift to the people of Kelethin. It has no magical properties, but it represents the glory of Tunare. It appears as a small emerald shard. Alas, now it has been stolen by Faldor Hendrys and only his brother [Elmion Hendrys] could know of his whereabouts.");
