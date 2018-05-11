@@ -33,7 +33,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 13246})) then
 			e.self:Say("Good work!! Kylan will never know o' me negligence. I owe ye one, young warrior. Let's call it even with this. Twas found by one of our foraging parties. It is still useful. And... I believe ye can assist with a more [dangerous matter] as well");
 			e.other:Ding();
-			e.other:SummonItem(eq.ChooseRandom(17009, 17001));
+			e.other:SummonItem(eq.ChooseRandom(17009, 17001)); -- purse, wrist pouch
 			e.other:Faction( 361, 5);
 			e.other:Faction( 294, 5);
 			e.other:Faction( 213, 5);
@@ -47,7 +47,7 @@ function event_trade(e)
 		end
 	end
 	if(e.other:GetFaction(e.self) < 5) then
-		if(item_lib.check_turn_in(e.trade, {item1 = 12227, item2 = 13248, item3 = 13247, item4 = 13233})) then
+		if(item_lib.check_turn_in(e.trade, {item1 = 12227, item2 = 13248, item3 = 13247, item4 = 13233})) then -- barbarian head (from Basil), jaw, skull, rib
 			e.self:Say("Nice work " .. e.other:GetName() .. "! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.");
 			e.other:Ding();
 			e.other:Faction( 361, -15);	--shows neg faction hit on live.   possibly to avoid exploits
@@ -55,8 +55,8 @@ function event_trade(e)
 			e.other:Faction( 213, -15);
 			e.other:Faction( 311, -15);
 			e.other:AddEXP(10000);
-			e.other:SummonItem(5367);
-		elseif(item_lib.check_turn_in(e.trade, {item1 = 12225, item2 = 13248, item3 = 13247, item4 = 13233})) then
+			e.other:SummonItem(5367); -- Langseax
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 12225, item2 = 13248, item3 = 13247, item4 = 13233})) then -- barbarian head (from Paglan), jaw, skull, rib
 			e.self:Say("Nice work " .. e.other:GetName() .. "! Paglan has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax of the Wolves for your efforts.");
 			e.other:Ding();
 			e.other:Faction( 361, -20);
@@ -64,7 +64,7 @@ function event_trade(e)
 			e.other:Faction( 213, -20);
 			e.other:Faction( 311, -20);
 			e.other:AddEXP(12000);
-			e.other:SummonItem(5368);
+			e.other:SummonItem(5368); -- Langseax of the Wolves
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

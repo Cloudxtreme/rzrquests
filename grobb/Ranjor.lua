@@ -27,10 +27,12 @@ function event_trade(e)
 		e.other:Faction(66,100,0);  	-- Da Basher
 		e.other:Faction(22,-15,0);  -- Broken Skull Clan
 		e.other:AddEXP(100);
-	elseif (item_lib.check_turn_in(e.trade, {item1 = 5014, item2 = 5014, gold = 2})) then -- correct text needed
+	elseif (item_lib.check_turn_in(e.trade, {item1 = 13187, item2 = 13187, item3 = 13409})) then -- Now correctly taking two tadpole flesh and 1 froglok meat -cr0ss
+		-- Whoever made this fucking sucked at it. Was giving absurd rewards for nothing. -cr0ss
 		e.self:Say("Raar.. Ranjor give yous a good weapon...");
 		e.other:Ding();
-		e.other:SummonItem(eq.ChooseRandom(94201,6022,6025,7014,5026));
+		e.other:AddEXP(10);
+		e.other:SummonItem(5025); -- Rusty Two Handed Battle Axe -- correct now -cr0ss
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

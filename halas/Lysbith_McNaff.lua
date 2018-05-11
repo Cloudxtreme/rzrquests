@@ -33,7 +33,7 @@ function event_trade(e)
 		e.other:AddEXP(3800);
 		e.other:GiveCash(0,0,4,0);
 		e.other:Ding();
-		e.other:SummonItem(13005,1);	-- Reward: Iron Ration
+		e.other:SummonItem(13005,2);	-- Reward: Iron Ration
 		e.other:Faction(361,5);			-- Wolves of the North
 		e.other:Faction(294,5);			-- Shamen of Justice
 		e.other:Faction(213,5);			-- Merchants of Halas
@@ -43,7 +43,7 @@ function event_trade(e)
 		e.other:AddEXP(3800);
 		e.other:GiveCash(0,0,5,0);
 		e.other:Ding();
-		e.other:SummonItem(13005,1);	-- Reward: Iron Ration
+		e.other:SummonItem(13005,2);	-- Reward: Iron Ration
 		e.other:Faction(361,10);		-- Wolves of the North
 		e.other:Faction(294,10);		-- Shamen of Justice
 		e.other:Faction(213,10);		-- Merchants of Halas
