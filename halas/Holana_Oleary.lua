@@ -12,7 +12,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13962})) then	--Karana Clover Shipment
 		e.self:Say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court.");
 		local rewardr = math.random(10);
-		e.other:GiveCash(math.random(99),math.random(99),math.random(99),0);
+		e.other:GiveCash(math.random(35),math.random(35),math.random(20),0);
 		e.other:AddEXP(1600);
 		e.other:Ding();
 		e.other:Faction(213,2); 								--Merchants of Halas
@@ -56,8 +56,8 @@ function event_trade(e)
 			e.other:SummonItem(spellreward);
 		elseif(rewardr < 7) then
 			e.other:SummonItem(eq.ChooseRandom(2031,2036,2030,2034,2027,2038,2026,2029,2025,2032,2028,2033));	-- Complete Set of Large Leather Items
-		elseif(rewardr < 10) then
-			e.other:SummonItem(eq.ChooseRandom(5043,6032,6030,7022,7024,94155,6031));							-- All SHM usable tarnished weaponry
+		elseif(rewardr < 9) then
+			e.other:SummonItem(eq.ChooseRandom(5043,6032,6030,7022,7024,6031));							-- All SHM usable tarnished weaponry
 		else
 			e.other:SummonItem(2912); 																			-- Polar Bear Cloak
 		end
