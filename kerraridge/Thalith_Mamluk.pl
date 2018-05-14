@@ -8,9 +8,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 6347 => 1)) {
+  if (plugin::check_handin(\%itemcount, 6347 => 1)) { # Sharp Tooth
     quest::say("You.. You kill the rats? Errr. Thalith thanks you. Here. Take this. It's good luck charm I've had for years.");
-    quest::summonitem(1061);
+    quest::summonitem(1061); # Fishbone Necklace
     quest::faction( 175, 10);
   }   
 }

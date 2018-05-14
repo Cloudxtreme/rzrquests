@@ -77,7 +77,7 @@ sub EVENT_ITEM {
       quest::faction(90, -10); # Ebon Mask
       quest::exp(5000);
       quest::givecash(0, 4, 0, 0);
-      quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010));
+      quest::summonitem(quest::ChooseRandom(7007,7008,7009,7010)); # rusty weapon
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12170 => 1, 12172 => 1, 12174 => 1, 12178 => 1))) { # Dunfire Tongues
       quest::say("Excellent work!! You are quite an asset to this mining guild. Please accept this Parrying Pick 628 for your great service. If you truly wish to serve our guild. Go and speak with Mater. Tell him you are [ready to earn Mining Pick 628].");

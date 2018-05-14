@@ -25,7 +25,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
     if(plugin::check_handin(\%itemcount, 10569 => 1, 10546 => 1, 10033 => 1)) { # bracers
-		quest::summonitem("3189");
+		quest::summonitem(3189);
 		quest::ding();
 		quest::say("Well done. May Karana bless your soul.");
 		quest::faction(182,+30); # kithicor residence
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
 		quest::exp(10000);		
     } 
 	if(plugin::check_handin(\%itemcount, 10566 => 1, 10570 => 1, 10034 => 1)) { # helm
-		quest::summonitem("3181");
+		quest::summonitem(3181);
 		quest::ding();
 		quest::say("Well done. May Karana bless your soul.");
 		quest::faction(182,+30); # kithicor residence
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
 		quest::exp(10000);
     } 
 	if(plugin::check_handin(\%itemcount, 10548 => 1, 10568 => 1, 10032 => 2)) { # sleeves
-		quest::summonitem("3188");
+		quest::summonitem(3188);
 		quest::ding();
 		quest::say("Well done. May Karana bless your soul.");
 		quest::faction(182,+30); # kithicor residence
@@ -55,7 +55,7 @@ sub EVENT_ITEM {
 		quest::exp(10000);		
     }
 	if(plugin::check_handin(\%itemcount, 10571 => 1, 10567 => 1, 10035 => 2)) { # tunic
-		quest::summonitem("3184");
+		quest::summonitem(3184);
 		quest::ding();
 		quest::say("Well done. May Karana bless your soul.");
 		quest::faction(182,+30); # kithicor residence

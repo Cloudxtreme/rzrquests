@@ -16,9 +16,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 13073 => 4)) {
+  if(plugin::check_handin(\%itemcount, 13073 => 4)) { # Bone Chips
     quest::say("You have done well. We thank you for your deed with this humble reward. The power behind the raising of our dead shall soon be found. You will earn more respect with more bone chips. I only wish you could assist in the return of the [remains of Cromil].");
-    quest::summonitem(quest::ChooseRandom(2116,2122,5013,5014,5016,5023,6011,13002,13003));
+    quest::summonitem(quest::ChooseRandom(2116,2122,5013,5014,5016,5023,6011,13002,13003)); # patchwork, rusty, torch, lantern, junk
     quest::ding();
     quest::givecash(7,10,0,0); # Cash
     quest::faction(44,10);             # Clerics of Underfoot

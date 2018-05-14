@@ -8,9 +8,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 6344 => 1)) {
+  if (plugin::check_handin(\%itemcount, 6344 => 1)) { # Gnome Tinkered Toy
     quest::say("Rreeee! Great toy. Shiny. We not need this old toy anymore. You take. Now go way, this our toy, we play.");
-    quest::summonitem(13748);
+    quest::summonitem(13748); # Kerran Toy
     quest::faction( 175, 20);
   }
 }

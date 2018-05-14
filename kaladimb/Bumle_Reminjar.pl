@@ -24,13 +24,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   if (($faction <= 4) && (plugin::check_handin(\%itemcount, 12157 => 4))) {
+   if (($faction <= 4) && (plugin::check_handin(\%itemcount, 12157 => 4))) { # aviak chick talon
       quest::say("You have done well. Your deeds shall be recorded within our journals. Here, then, is your reward. May you strive to serve us to the full extent of your powers. The [elders] must also die.");
       quest::faction(44, 20);  #Clerics Of Underfoot
       quest::faction(169, 20); #Kazon Stormhammer
       quest::faction(219, 20); #Miner's Guild 249
       quest::exp(5000);
-      quest::summonitem(quest::ChooseRandom(2116,2118,2120,2123,2124));
+      quest::summonitem(quest::ChooseRandom(2116,2118,2120,2123,2124)); # small patchwork gear
       quest::ding();
    }
    elsif (($faction <= 4) && (plugin::check_handin(\%itemcount, 12158 => 4))) {
