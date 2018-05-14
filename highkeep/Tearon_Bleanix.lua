@@ -21,7 +21,7 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 12267,item2 = 13109})) then
 		e.self:Say("Peace..  I can rest now.  You now hold my Silent Watch Shield.  Protect Felwithe..");
-		e.other:SummonItem(9312);
+		e.other:SummonItem(9312); -- Silent Watch Shield
 		e.other:Ding();
 		e.other:Faction(8,10,0);
 		e.other:Faction(43,10,0);
