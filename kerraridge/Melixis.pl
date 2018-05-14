@@ -17,17 +17,17 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 14042 => 1)) {
+  if (plugin::check_handin(\%itemcount, 14042 => 1)) { # Guk Bracket Mildew
     quest::say("Thank you for this item, here is the dull ring");
-    quest::summonitem(13733);
+    quest::summonitem(13733); # Copper Ring
   }  
-  if (plugin::check_handin(\%itemcount, 14043 => 1)) {
+  if (plugin::check_handin(\%itemcount, 14043 => 1)) { # Faerix Spores
     quest::say("You have gotten the spores that I asked for, very well, here is the ring as agreed");
-    quest::summonitem(13731);
+    quest::summonitem(13731); # Silver Ring
   }
-  if (plugin::check_handin(\%itemcount, 14044 => 1)) {
+  if (plugin::check_handin(\%itemcount, 14044 => 1)) { # Degenerated Guk Weed
     quest::say("Excellent, I will gladly give you the ring for this weed that you have brought me");
-    quest::summonitem(13732);
+    quest::summonitem(13732); # Gold Ring
   }
 }
 #EOF - The text is not accurate, if anyone has the correct text please feel free to update the file accordingly

@@ -8,10 +8,18 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 12360 => 1, 14914 => 1, 14915 => 1, 17969 => 1)) {
-    quest::say("Ahhh. This will help. Many Kerrans will like these. Here. Take this old bag. I have too many. Maybe it help you.");
-    quest::summonitem(17032);
-    quest::exp(5000);
+  if (plugin::check_handin(\%itemcount, 12360 => 1, 14914 => 1, 14915 => 1, 17969 => 1)) { # Tunare's Finest, Thunderhoof Mushroom, Tea Leaves, Hand Made Backpack
+    $whichbag = int(rand(100));
+    if ($whichbag > 40) {
+      quest::say("Ahhh. This will help. Many Kerrans will like these. Here. Take this old bag. I have too many. Maybe it help you.");
+      quest::summonitem(17032); # Rough Leather Sack 
+      quest::exp(5000);
+    } else {
+      quest::say("Ahhh. This will help. Many Kerrans will like these. Fair trade, Feskr will give you this pack. It will help.");
+      quest::summonitem(132490); # Rough Leather Backpack (rzr)  
+      quest::exp(5000);
+    }
+    
    }
    plugin::return_items(\%itemcount);
 }

@@ -11,9 +11,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 7005 => 1, 13737 => 1, 13762 => 1)) {
+  if (plugin::check_handin(\%itemcount, 7005 => 1, 13737 => 1, 13762 => 1)) { # Giant Snake Fang, Aviak Charm, Tiger Skin
     quest::say("Purrrrfect furrless one, you have proved your intentions to help.  Here is the item that was promised for your services.");
-    quest::summonitem(10139);
+    quest::summonitem(10139); # Bone Talisman
   }
 }
 #END of FILE Zone:kerraridge  ID:74080 -- Errrak_Thickshank
