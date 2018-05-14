@@ -23,14 +23,14 @@ sub EVENT_SAY {
 	if($text=~/searching for the mudtoes/i){
 		quest::say("I have heard persistent rumors of two Mudtoe ogres who survived the slaughter.  Go to the port of Butcherblock.  Those dock hands must have heard of the name [Mudtoe].  Bring me the remaining heads of the Mudtoes!!  I want all the Mudtoes dead!!  Do not return until you have them both!!");
 	}
-	if($text=~/trades/i) {
-		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
-		quest::summonitem(51121);
-	}
-	if($text=~/second book/i)	{
-		quest::say("Here is the second volume of the book you requested, may it serve you well!");
-		quest::summonitem(51122);
-	}
+	# if($text=~/trades/i) {
+	# 	quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+	# 	quest::summonitem(51121);
+	# }
+	# if($text=~/second book/i)	{
+	# 	quest::say("Here is the second volume of the book you requested, may it serve you well!");
+	# 	quest::summonitem(51122);
+	# }
 }
 
 sub EVENT_ITEM { 
